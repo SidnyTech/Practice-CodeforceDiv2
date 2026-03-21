@@ -18,8 +18,6 @@ Por ejemplo:
 2026_01_29
 2025_12_31
 
-> Este formato asegura que las carpetas se ordenen de más reciente a más antiguo automáticamente al ordenarlas por nombre.
-
 Dentro de cada carpeta, encontrarás las soluciones a los problemas del contest correspondiente.
 
 ## Convenciones
