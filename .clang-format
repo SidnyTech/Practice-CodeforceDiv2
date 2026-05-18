@@ -1,0 +1,33 @@
+BasedOnStyle: Google
+ColumnLimit: 0
+
+AllowShortFunctionsOnASingleLine: All
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+
+SortIncludes: false
+
+IndentWidth: 2
+TabWidth: 2
+
+BreakBeforeBraces: Attach
+
+SpaceBeforeParens: ControlStatements
+
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+Cpp11BracedListStyle: false
+
+BinPackArguments: true
+BinPackParameters: true
+
+PenaltyBreakBeforeFirstCallParameter: 1000000
+PenaltyBreakComment: 1000000
+PenaltyBreakString: 1000000
+PenaltyExcessCharacter: 0
