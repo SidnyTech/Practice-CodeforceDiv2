@@ -18,27 +18,20 @@ const int MOD = 1e9 + 7;
 
 ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
-ll binpow(ll a, ll b, ll m = MOD) {
-  ll r = 1;
-  a %= m;
-  for (; b; b >>= 1, a = a * a % m)
-    if (b & 1) r = r * a % m;
-  return r;
+
+void solve() {
+  int n, num = 1;
+  cin >> n;
+
+  for (int i = 1; i <= n; ++i) {
+    cout << num << ' ';
+    if (i % 2 == 0)
+      num += 2;
+    else
+      num += 1;
+  }
+  cout << '\n';
 }
-ll inv(ll a) { return binpow(a, MOD - 2); }
-
-#ifdef LOCAL
-#define dbg(x) cerr << #x << " = " << (x) << " [l" << __LINE__ << "]\n"
-#define dbgv(v)                           \
-  cerr << #v << " = [";                   \
-  for (auto& _e : (v)) cerr << _e << ' '; \
-  cerr << "]\n"
-#else
-#define dbg(x)
-#define dbgv(v)
-#endif
-
-void solve() {}
 
 int main() {
   ios::sync_with_stdio(false);

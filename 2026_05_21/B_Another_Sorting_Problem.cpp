@@ -1,7 +1,7 @@
 /*
   author: Sian01
   name: Sidney A. Sahonero
-  problem link: 
+  problem link: https://codeforces.com/contest/2231/problem/B
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,27 +18,26 @@ const int MOD = 1e9 + 7;
 
 ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
 ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
-ll binpow(ll a, ll b, ll m = MOD) {
-  ll r = 1;
-  a %= m;
-  for (; b; b >>= 1, a = a * a % m)
-    if (b & 1) r = r * a % m;
-  return r;
+
+void solve() {
+  ll n, k = 0;
+  cin >> n;
+  vll a(n);
+  for (int i = 0; i < n; ++i) cin >> a[i];
+
+  for (int i = n - 2; i >= 0; --i)
+    if (a[i] > a[i + 1])
+      k = max(k, a[i] - a[i + 1]);
+
+  for (int i = 1; i < n; ++i)
+    if (a[i] < a[i - 1])
+      a[i] += k;
+
+  if (is_sorted(all(a)))
+    cout << "YES\n";
+  else
+    cout << "NO\n";
 }
-ll inv(ll a) { return binpow(a, MOD - 2); }
-
-#ifdef LOCAL
-#define dbg(x) cerr << #x << " = " << (x) << " [l" << __LINE__ << "]\n"
-#define dbgv(v)                           \
-  cerr << #v << " = [";                   \
-  for (auto& _e : (v)) cerr << _e << ' '; \
-  cerr << "]\n"
-#else
-#define dbg(x)
-#define dbgv(v)
-#endif
-
-void solve() {}
 
 int main() {
   ios::sync_with_stdio(false);

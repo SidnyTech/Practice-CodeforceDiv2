@@ -1,7 +1,7 @@
 /*
   author: Sian01
   name: Sidney A. Sahonero
-  problem link: 
+  problem link: https://codeforces.com/contest/2230/problem/C
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -27,18 +27,27 @@ ll binpow(ll a, ll b, ll m = MOD) {
 }
 ll inv(ll a) { return binpow(a, MOD - 2); }
 
-#ifdef LOCAL
-#define dbg(x) cerr << #x << " = " << (x) << " [l" << __LINE__ << "]\n"
-#define dbgv(v)                           \
-  cerr << #v << " = [";                   \
-  for (auto& _e : (v)) cerr << _e << ' '; \
-  cerr << "]\n"
-#else
-#define dbg(x)
-#define dbgv(v)
-#endif
+void solve() {
+  ll n, ans, cnt1 = 0, cnt2 = 0, sum = 0, gaps = 0;
+  cin >> n;
+  vll a(n);
 
-void solve() {}
+  for (ll i = 0; i < n; ++i) {
+    cin >> a[i];
+    if (a[i] == 1)
+      ++cnt1;
+    else {
+      ++cnt2;
+      sum += a[i];
+      gaps += (a[i] / 2) - 1;
+    }
+  }
+
+  if (cnt2 == 1) ++gaps;
+
+  ans = sum + min(cnt1, gaps);
+  cout << (ans >= 3 ? ans : 0) << '\n';
+}
 
 int main() {
   ios::sync_with_stdio(false);
@@ -46,7 +55,8 @@ int main() {
 
   int t;
   cin >> t;
-  while (t--) solve();
+  while (t--)
+    solve();
 }
 
 /*

@@ -45,14 +45,11 @@ int main() {
 
   int t;
   cin >> t;
-  while (t--)
-    solve();
+  while (t--) solve();
 }
 
 /*
 Mi objetivo es [2s][1s y 3s]
-cnt2 = los 2s que estan al final entre 1s y 3s
-cnt13 = los 1s y 3s que estan al inicio entre 2s
 
      /\_/\
     ( o.o )
